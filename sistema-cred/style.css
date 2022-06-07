@@ -1,0 +1,17 @@
+nav {
+    margin-bottom: 30px;
+}
+
+nav a:after {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 20px;
+    border-radius: 15px;
+    margin-left: 5px;
+    background-color: rgb(114, 113, 113);
+}
+
+tr {
+    text-align: center;
+}
