@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">  
+    
+    <title>Crediário Online</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">       
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-secondary">Todos os Clientes</button>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-secondary">Somente Clientes com Pendencia</button>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-secondary">Clientes sem Nenhuma Parcela</button>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-primary">Novo Cliente</button>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" method="post" name="">
+                    <input class="form-control me-2" type="search" placeholder="Cliente" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Procurar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal Novo Cliente -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Novo Cliente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-4">
+                            <label for="inputNomeCliente" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="inputNomeCliente">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputCpf" class="form-label">CPF</label>
+                            <input type="text" class="form-control" id="inputCpf">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputRg" class="form-label">RG</label>
+                            <input type="text" class="form-control" id="inputRg">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputDataNascimento" class="form-label">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="inputDataNascimento">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputSexo" class="form-label">Sexo</label>
+                            <select id="inputSexo" class="form-select">
+                              <option selected>Masculino</option>
+                              <option>Feminino</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label for="inputEndereco" class="form-label">Endereço</label>
+                            <input type="text" class="form-control" id="inputEndereco">
+                        </div>
+                        <div class="col-4">
+                            <label for="inputBairro" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" id="inputBairro">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCidade" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="inputCidade">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="inputCep" class="form-label">CEP</label>
+                            <input type="text" class="form-control" id="inputCep">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputNumeroCasa" class="form-label">Nº</label>
+                            <input type="text" class="form-control" id="inputNumeroCasa">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputEstado" class="form-label">Estado</label>
+                            <input type="text" class="form-control" id="inputEstado">
+                        </div>
+                        <div class="col-md-5">
+                            <label for="inputComplemento" class="form-label">Complemento</label>
+                            <input type="text" class="form-control" id="inputComplemento">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="inputContato1" class="form-label">Contato 1</label>
+                            <input type="text" class="form-control" id="inputContato1">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="inputContato2" class="form-label">Contato 2</label>
+                            <input type="text" class="form-control" id="inputContato2">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="inputContato3" class="form-label">Contato 3</label>
+                            <input type="text" class="form-control" id="inputContato3">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="inputContato4" class="form-label">Contato 4</label>
+                            <input type="text" class="form-control" id="inputContato4">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputNomeMae" class="form-label">Nome da Mãe</label>
+                            <input type="text" class="form-control" id="inputNomeMae">
+                        </div>
+                        <div class="col-md-1">
+                            <label for="inputSpcPresente" class="form-label">Está no SPC</label>
+                            <select id="inputSpcPresente" class="form-select">
+                                <option selected>Não</option>
+                                <option>Sim</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputDataAbertura" class="form-label">Data de Abertura</label>
+                            <input type="date" class="form-control" id="inputDataAbertura">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputTrabalho" class="form-label">Local de Trabalho</label>
+                            <input type="text" class="form-control" id="inputTrabalho">
+                        </div>
+                        <div class="col-md-1">
+                            <label for="inputSalario" class="form-label">Salário</label>
+                            <input type="number" class="form-control" id="inputSalario">
+                        </div>
+                        <div class="col-md-8">
+                            <label for="inputObs" class="form-label">Observação</label>
+                            <textarea type="text" class="form-control" id="inputObs" ></textarea>
+                        </div>
+                    </form>
+                </div>  
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnSalvarNovoCliente">Salvar Cliente</button>
+                    <button type="button" class="btn btn-danger" id="btnLimparCamposNovoCliente">Limpar Todos Os Campos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Data de Abertura</th>
+                <th scope="col">Visualizar Cliente</th>
+                <th scope="col">Excluir Cliente</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>111.111.111-11</td>
+                <td>11/02/2011</td>
+                <td><button type="button" class="btn btn-primary" id="tableVisualizar">Visualizar</button></td>
+                <td><button type="button" class="btn btn-danger" id="tableExcluir">Excluir</button></td>
+              </tr>        
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="src/script.js"></script>
+</body>
+</html>
