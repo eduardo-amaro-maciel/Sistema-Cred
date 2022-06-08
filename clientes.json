@@ -1,0 +1,37 @@
+{
+    "clientes": 
+    [
+        {
+            "id": 1,
+            "nome": "",
+            "cpf": "",
+            "rg": "",
+            "carnes_individuais": {           
+                "1": {
+                    "num_parcelas": 4,
+                    "prazos": [
+                        { "1": ["22-03-2022", 44.90] },
+                        { "2": ["22-03-2022", 44.90] },
+                        { "3": ["22-03-2022", 44.90] },
+                        { "4": ["22-03-2022", 44.90] } 
+                    ],  
+                    "compra": "Aqui vai uma observação",
+                    "nome_comprador": "Aqui vai o nome do comprador"
+                },        
+                "2": {
+                    "num_parcelas": 4,
+                    "prazos": [
+                        { "1": ["22-03-2022", 44.90] },
+                        { "2": ["22-03-2022", 44.90] },
+                        { "3": ["22-03-2022", 44.90] },
+                        { "4": ["22-03-2022", 44.90] } 
+                    ],  
+                    "compra": "Aqui vai uma observação",
+                    "nome_comprador": "Aqui vai o nome do comprador"
+                }        
+            }
+        }
+    ]
+}
+
+   
